@@ -11,7 +11,7 @@ A polished retail analytics portfolio project that analyzes 50,000+ transactions
 ## Project Links
 
 - **GitHub Repository:** https://github.com/vmadagiri/customer-spending-analytics-dashboard
-- **Portfolio Website (Quarto):** Coming soon
+- **Portfolio Website (Quarto): https://vmadagiri.github.io/customer-spending-analytics-dashboard/
 - **Live Streamlit Dashboard:** Coming soon
 
 ## Executive Summary
