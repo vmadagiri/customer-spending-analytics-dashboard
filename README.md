@@ -10,13 +10,17 @@ A polished retail analytics portfolio project that analyzes 50,000+ transactions
 
 ## Project Links
 
-- GitHub repository: `https://github.com/your-username/customer-spending-analytics-dashboard`
-- Quarto portfolio website: `https://your-username.github.io/customer-spending-analytics-dashboard`
-- Streamlit dashboard: `https://your-streamlit-app-url`
+- **GitHub Repository:** https://github.com/vmadagiri/customer-spending-analytics-dashboard
+- **Portfolio Website (Quarto):** Coming soon
+- **Live Streamlit Dashboard:** Coming soon
 
 ## Executive Summary
 
 This project simulates a realistic business analytics workflow for a retail company. It generates synthetic operational data, loads it into a normalized PostgreSQL database, answers stakeholder questions with SQL, exports analysis-ready datasets with Python, and presents insights through both an interactive Streamlit dashboard and a recruiter-friendly Quarto portfolio case study.
+
+## Dashboard Preview
+
+![Executive Dashboard](dashboard_screenshots/executive_summary.png)
 
 ## Business Problem
 
@@ -260,3 +264,61 @@ These screenshots are referenced by the Quarto website.
 - Schedule refreshes with Airflow or GitHub Actions.
 - Add churn prediction or customer propensity modeling.
 - Deploy the dashboard to Streamlit Community Cloud and the Quarto site to GitHub Pages.
+
+---
+
+# My Development Journey
+
+## Why I Built This
+
+As I prepare for graduate studies in Data Science and pursue data analytics internships, I wanted to build a project that demonstrates an end-to-end analytics workflow similar to what I would encounter in industry.
+
+Instead of analyzing a small pre-cleaned dataset, I wanted to simulate a realistic retail business environment by generating over 50,000 transactions, storing them in PostgreSQL, writing advanced SQL to answer business questions, and presenting those insights through an interactive dashboard.
+
+The primary goal wasn't just to build visualizations—it was to practice thinking like a data analyst by transforming raw transactional data into actionable business recommendations.
+
+---
+
+## What I Learned
+
+Building this project gave me practical experience with the workflow of a data analyst from generating structured data to designing a relational database, writing SQL for business questions, and presenting insights through interactive dashboards.
+
+- Designing a normalized relational database in PostgreSQL
+- Writing advanced SQL using joins, CTEs, aggregations, and window functions
+- Building reusable Python scripts for ETL workflows
+- Connecting Python with PostgreSQL using SQLAlchemy
+- Developing interactive dashboards using Streamlit
+- Presenting technical work as a business-focused case study using Quarto
+- Structuring a project that is reproducible and easy for others to understand
+
+---
+
+## Challenges
+
+Some of the most interesting challenges during this project included:
+
+- Designing synthetic retail data that behaved realistically enough to support meaningful business analysis.
+- Creating SQL queries that answered real business questions rather than simply demonstrating SQL syntax.
+- Organizing the project so each component (database, SQL, Python, dashboard, and documentation) worked together as one complete analytics workflow.
+- Making the dashboard intuitive for someone with no technical background while still exposing detailed analytical insights.
+
+---
+
+## What I'd Improve Next
+
+This project is intended to continue evolving. Future improvements include:
+
+- Deploying the Streamlit dashboard for public access
+- Publishing the Quarto website with GitHub Pages
+- Connecting the dashboard to a live PostgreSQL database instead of generated CSV files
+- Adding automated data refresh workflows
+- Expanding the analysis with predictive models for customer churn and sales forecasting
+- Writing unit tests for the Python ETL pipeline
+
+---
+
+## Reflection
+
+This project represents my transition from completing guided coursework to building independent, portfolio-quality analytics projects.
+
+Beyond learning individual tools, it helped me understand how SQL, Python, PostgreSQL, visualization, and storytelling work together to support data-driven business decisions. Going forward, I plan to continue expanding this project while applying the same workflow to additional business and machine learning case studies.
