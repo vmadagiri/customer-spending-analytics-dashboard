@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "insights.html",
+    "href": "insights.html",
+    "title": "Insights",
+    "section": "",
+    "text": "Holiday-heavy months are intentionally modeled to show higher sales volume, creating a realistic opportunity for inventory and campaign planning.\n\n\n\nDiscount bands can increase quantity sold, but profit impact should be monitored at the category and product level.\n\n\n\nHigh-frequency customers create a concentrated share of revenue, making retention and loyalty segmentation valuable."
+  },
+  {
+    "objectID": "insights.html#business-insights",
+    "href": "insights.html#business-insights",
+    "title": "Insights",
+    "section": "",
+    "text": "Holiday-heavy months are intentionally modeled to show higher sales volume, creating a realistic opportunity for inventory and campaign planning.\n\n\n\nDiscount bands can increase quantity sold, but profit impact should be monitored at the category and product level.\n\n\n\nHigh-frequency customers create a concentrated share of revenue, making retention and loyalty segmentation valuable."
+  },
+  {
+    "objectID": "insights.html#business-recommendations",
+    "href": "insights.html#business-recommendations",
+    "title": "Insights",
+    "section": "Business Recommendations",
+    "text": "Business Recommendations\n\nPrioritize inventory planning for high-revenue categories before holiday demand spikes.\n\n\nUse RFM segmentation to separate champions, loyal customers, at-risk customers, and new or promising customers.\n\n\nLaunch win-back campaigns for high-value customers with long purchase gaps.\n\n\nCompare regional category winners to localize merchandising and promotional strategy.\n\n\nMonitor discount bands by both revenue and profit so promotions increase volume without eroding margin."
+  },
+  {
+    "objectID": "insights.html#resume-bullets",
+    "href": "insights.html#resume-bullets",
+    "title": "Insights",
+    "section": "Resume Bullets",
+    "text": "Resume Bullets\n\nAnalyzed 50,000+ retail transactions by developing 20+ SQL queries using joins, CTEs, window functions, and aggregations to uncover customer behavior, revenue trends, and business insights.\nAutomated a PostgreSQL analytics pipeline with Python, pandas, SQLAlchemy, and Faker to generate synthetic retail data, create normalized tables, load CSV files, and export reusable query results.\nBuilt an interactive Streamlit business intelligence dashboard and Quarto portfolio case study with KPI cards, Plotly visualizations, filters, business recommendations, and recruiter-ready documentation."
+  },
+  {
+    "objectID": "insights.html#about-this-project",
+    "href": "insights.html#about-this-project",
+    "title": "Insights",
+    "section": "About This Project",
+    "text": "About This Project\nThis project was designed to mirror the type of work expected from a data analyst or data science intern: translating ambiguous business questions into structured data, SQL analysis, reproducible automation, dashboarding, and executive communication.\nThe case study is intentionally end-to-end. It demonstrates data generation, schema design, SQL analytics, Python automation, dashboard UX, and presentation quality in one cohesive portfolio project."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Customer Spending Analytics Dashboard",
+    "section": "",
+    "text": "Portfolio Case Study\n\n\n\nA professional retail analytics project analyzing 50,000 synthetic transactions to uncover revenue trends, customer behavior, product performance, store performance, and business opportunities.\n\nView Dashboard View GitHub Repository Read the SQL Analysis"
+  },
+  {
+    "objectID": "index.html#project-overview",
+    "href": "index.html#project-overview",
+    "title": "Customer Spending Analytics Dashboard",
+    "section": "Project Overview",
+    "text": "Project Overview\nThis project simulates a real business analytics workflow for a retail company. It starts with synthetic operational data, loads the data into a normalized PostgreSQL database, answers stakeholder questions with SQL, exports reusable analysis outputs with Python, and presents the final insights in an interactive Streamlit dashboard.\nThe portfolio deliverable includes both a working analytics application and this Quarto case study, so recruiters and interviewers can quickly understand the business problem, technical approach, and decision-making value."
+  },
+  {
+    "objectID": "index.html#business-problem",
+    "href": "index.html#business-problem",
+    "title": "Customer Spending Analytics Dashboard",
+    "section": "Business Problem",
+    "text": "Business Problem\nRetail leaders need to know where growth is coming from, which customers are worth retaining, how product categories perform, and whether discounts are improving revenue without damaging profitability. The goal of this analysis is to convert transaction-level data into recommendations for merchandising, retention, regional strategy, and dashboard-driven decision-making."
+  },
+  {
+    "objectID": "index.html#tech-stack",
+    "href": "index.html#tech-stack",
+    "title": "Customer Spending Analytics Dashboard",
+    "section": "Tech Stack",
+    "text": "Tech Stack\n\n\nSQL\n\n\nPostgreSQL\n\n\nPython\n\n\npandas\n\n\nSQLAlchemy\n\n\nStreamlit\n\n\nPlotly\n\n\nQuarto"
+  },
+  {
+    "objectID": "index.html#analytics-pipeline",
+    "href": "index.html#analytics-pipeline",
+    "title": "Customer Spending Analytics Dashboard",
+    "section": "Analytics Pipeline",
+    "text": "Analytics Pipeline\n\n\n\n\n\nflowchart LR\n    A[\"Synthetic CSV Data\"] --&gt; B[\"PostgreSQL Database\"]\n    B --&gt; C[\"SQL Business Queries\"]\n    C --&gt; D[\"Python Export Pipeline\"]\n    D --&gt; E[\"Streamlit Dashboard\"]\n    D --&gt; F[\"Quarto Portfolio Case Study\"]"
+  },
+  {
+    "objectID": "index.html#what-makes-this-portfolio-ready",
+    "href": "index.html#what-makes-this-portfolio-ready",
+    "title": "Customer Spending Analytics Dashboard",
+    "section": "What Makes This Portfolio-Ready",
+    "text": "What Makes This Portfolio-Ready\n\n\nBusiness Framing\nThe project is organized around realistic stakeholder questions: revenue trends, churn risk, category performance, regional performance, discount impact, and customer value.\n\n\nTechnical Depth\nThe SQL analysis demonstrates joins, CTEs, window functions, RFM segmentation, cohort retention, moving averages, rankings, and aggregation logic.\n\n\nExecutive Presentation\nThe dashboard and Quarto website turn raw analysis into a recruiter-friendly case study with KPIs, visuals, recommendations, and resume bullets."
+  },
+  {
+    "objectID": "dashboard.html",
+    "href": "dashboard.html",
+    "title": "Dashboard",
+    "section": "",
+    "text": "The Streamlit dashboard is designed as an executive-facing business intelligence tool. It includes KPI cards, filters, charts, customer tables, product analysis, store rankings, and business recommendations.\n\nOpen Streamlit Dashboard View Source Code"
+  },
+  {
+    "objectID": "dashboard.html#streamlit-dashboard",
+    "href": "dashboard.html#streamlit-dashboard",
+    "title": "Dashboard",
+    "section": "",
+    "text": "The Streamlit dashboard is designed as an executive-facing business intelligence tool. It includes KPI cards, filters, charts, customer tables, product analysis, store rankings, and business recommendations.\n\nOpen Streamlit Dashboard View Source Code"
+  },
+  {
+    "objectID": "dashboard.html#dashboard-sections",
+    "href": "dashboard.html#dashboard-sections",
+    "title": "Dashboard",
+    "section": "Dashboard Sections",
+    "text": "Dashboard Sections\n\n\nExecutive Summary\nTotal revenue, total profit, transaction count, and average order value.\n\n\nRevenue Trends\nMonthly revenue and month-over-month growth charts.\n\n\nCustomer Analytics\nTop customers, RFM segment distribution, and churn-risk customers.\n\n\nProduct Analytics\nTop products, revenue by category, and profit margin by category.\n\n\nStore Analytics\nRevenue by region and store performance rankings.\n\n\nRecommendations\nFiltered, business-facing actions based on the current dashboard view."
+  },
+  {
+    "objectID": "dashboard.html#screenshots",
+    "href": "dashboard.html#screenshots",
+    "title": "Dashboard",
+    "section": "Screenshots",
+    "text": "Screenshots\nAdd screenshots to dashboard_screenshots/ after running the Streamlit app. The recommended filenames below are already referenced by this website.\n\n\n\n\n\nExecutive Summary\n\n\nExecutive Summary with filters, KPI cards, and current business performance.\n\n\n\n\n\nRevenue Trends\n\n\nMonthly revenue and month-over-month growth.\n\n\n\n\n\nCustomer Analytics\n\n\nTop customers, RFM segmentation, and churn-risk table.\n\n\n\n\n\nProduct and Store Analytics\n\n\nCategory performance, margin analysis, regional revenue, and store rankings."
+  },
+  {
+    "objectID": "dashboard.html#ux-design-notes",
+    "href": "dashboard.html#ux-design-notes",
+    "title": "Dashboard",
+    "section": "UX Design Notes",
+    "text": "UX Design Notes\nThe dashboard is organized for a business user who needs quick answers: high-level KPIs first, then trend context, then customer, product, and store drilldowns. Filters are kept in the sidebar so the main page remains focused on analysis."
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "The dataset is generated with Python and Faker to resemble realistic retail behavior. It intentionally includes repeat customers, weighted best-selling products, holiday seasonality, and discount-driven quantity effects.\n\n\n\ncustomers\n\n{.metric} Demographics, signup date, location, and loyalty tier.\n\n\n\n\n\nproducts\n\n{.metric} Category, subcategory, price, and cost.\n\n\n\n\n\nstores\n\n{.metric} Store metadata and sales region.\n\n\n\n\n\ntransactions\n\n{.metric} Purchase date, quantity, discount, payment method, revenue, and profit."
+  },
+  {
+    "objectID": "analysis.html#dataset-description",
+    "href": "analysis.html#dataset-description",
+    "title": "Analysis",
+    "section": "",
+    "text": "The dataset is generated with Python and Faker to resemble realistic retail behavior. It intentionally includes repeat customers, weighted best-selling products, holiday seasonality, and discount-driven quantity effects.\n\n\n\ncustomers\n\n{.metric} Demographics, signup date, location, and loyalty tier.\n\n\n\n\n\nproducts\n\n{.metric} Category, subcategory, price, and cost.\n\n\n\n\n\nstores\n\n{.metric} Store metadata and sales region.\n\n\n\n\n\ntransactions\n\n{.metric} Purchase date, quantity, discount, payment method, revenue, and profit."
+  },
+  {
+    "objectID": "analysis.html#database-schema",
+    "href": "analysis.html#database-schema",
+    "title": "Analysis",
+    "section": "Database Schema",
+    "text": "Database Schema\nThe PostgreSQL schema uses normalized tables with primary keys, foreign keys, NOT NULL constraints, check constraints, and indexes on transaction date plus customer, product, and store IDs.\n\n\n\n\n\nerDiagram\n    customers ||--o{ transactions : makes\n    products ||--o{ transactions : includes\n    stores ||--o{ transactions : records\n\n    customers {\n        int customer_id PK\n        varchar first_name\n        varchar last_name\n        varchar email\n        varchar gender\n        int age\n        varchar city\n        char state\n        date signup_date\n        varchar loyalty_tier\n    }\n\n    products {\n        int product_id PK\n        varchar product_name\n        varchar category\n        varchar subcategory\n        numeric unit_price\n        numeric cost\n    }\n\n    stores {\n        int store_id PK\n        varchar store_name\n        varchar city\n        char state\n        varchar region\n    }\n\n    transactions {\n        int transaction_id PK\n        int customer_id FK\n        int product_id FK\n        int store_id FK\n        date transaction_date\n        int quantity\n        numeric unit_price\n        numeric discount_percent\n        varchar payment_method\n        numeric revenue\n        numeric profit\n    }"
+  },
+  {
+    "objectID": "analysis.html#sql-analysis",
+    "href": "analysis.html#sql-analysis",
+    "title": "Analysis",
+    "section": "SQL Analysis",
+    "text": "SQL Analysis\nThe SQL file answers 26 business questions. The queries are written for PostgreSQL and demonstrate a range of techniques expected in analytics roles.\n\n\nRevenue Analytics\nMonthly revenue, profit, average order value, month-over-month growth, running revenue, and 3-month moving averages.\n\n\nCustomer Analytics\nRepeat customer rate, customer lifetime value, RFM segmentation, churn-risk detection, cohort retention, and declining spend flags.\n\n\nProduct and Store Analytics\nCategory revenue, highest-margin products, product rankings, regional performance, and store rankings within each region."
+  },
+  {
+    "objectID": "analysis.html#sql-techniques-demonstrated",
+    "href": "analysis.html#sql-techniques-demonstrated",
+    "title": "Analysis",
+    "section": "SQL Techniques Demonstrated",
+    "text": "SQL Techniques Demonstrated\n\nINNER JOIN and LEFT JOIN\nAggregations with GROUP BY and HAVING\nSingle and multiple CTEs\nWindow functions: ROW_NUMBER, RANK, LAG, SUM OVER, and moving averages\nCASE statements for segmentation and business logic\nDate functions for monthly, seasonal, weekday/weekend, and cohort analysis\nCustomer segmentation with RFM scoring"
+  },
+  {
+    "objectID": "analysis.html#example-business-questions",
+    "href": "analysis.html#example-business-questions",
+    "title": "Analysis",
+    "section": "Example Business Questions",
+    "text": "Example Business Questions\n\nWhich customers generate the highest lifetime revenue?\nWhich product categories are most profitable?\nWhich customers are at risk of churn?\nWhich stores lead revenue within each region?\nHow do discounts affect order volume, revenue, and profit?\nAre revenue trends improving month over month?"
+  }
+]
