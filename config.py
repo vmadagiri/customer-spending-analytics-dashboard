@@ -12,6 +12,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
+from sqlalchemy.engine import Engine
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -19,6 +20,7 @@ DATA_RAW_DIR = PROJECT_ROOT / "data" / "raw"
 DATA_PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 SQL_DIR = PROJECT_ROOT / "sql"
 IMAGES_DIR = PROJECT_ROOT / "images"
+DASHBOARD_SCREENSHOTS_DIR = PROJECT_ROOT / "dashboard_screenshots"
 
 load_dotenv(PROJECT_ROOT / ".env")
 
@@ -37,6 +39,6 @@ def get_database_url() -> str:
     )
 
 
-def get_engine():
+def get_engine() -> Engine:
     """Create a SQLAlchemy engine for PostgreSQL."""
     return create_engine(get_database_url(), future=True)

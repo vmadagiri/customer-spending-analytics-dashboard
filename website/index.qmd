@@ -1,0 +1,119 @@
+---
+title: "Customer Spending Analytics Dashboard"
+description: "A retail analytics portfolio case study using SQL, PostgreSQL, Python, Streamlit, Plotly, and Quarto."
+---
+
+::: {.hero}
+::: {.eyebrow}
+Portfolio Case Study
+:::
+
+# Customer Spending Analytics Dashboard
+
+A professional retail analytics project analyzing 50,000 synthetic transactions to uncover revenue trends, customer behavior, product performance, store performance, and business opportunities.
+
+::: {.button-row}
+[View Dashboard](https://your-streamlit-app-url){.button .primary}
+[View GitHub Repository](https://github.com/your-username/customer-spending-analytics-dashboard){.button .secondary}
+[Read the SQL Analysis](analysis.qmd){.button .secondary}
+:::
+:::
+
+::: {.card-grid}
+::: {.card}
+`50,000`
+: {.metric}
+Transactions analyzed
+: {.label}
+:::
+
+::: {.card}
+`5,000`
+: {.metric}
+Customers modeled
+: {.label}
+:::
+
+::: {.card}
+`300`
+: {.metric}
+Products generated
+: {.label}
+:::
+
+::: {.card}
+`26`
+: {.metric}
+SQL business questions
+: {.label}
+:::
+:::
+
+## Project Overview
+
+This project simulates a real business analytics workflow for a retail company. It starts with synthetic operational data, loads the data into a normalized PostgreSQL database, answers stakeholder questions with SQL, exports reusable analysis outputs with Python, and presents the final insights in an interactive Streamlit dashboard.
+
+The portfolio deliverable includes both a working analytics application and this Quarto case study, so recruiters and interviewers can quickly understand the business problem, technical approach, and decision-making value.
+
+## Business Problem
+
+Retail leaders need to know where growth is coming from, which customers are worth retaining, how product categories perform, and whether discounts are improving revenue without damaging profitability. The goal of this analysis is to convert transaction-level data into recommendations for merchandising, retention, regional strategy, and dashboard-driven decision-making.
+
+## Tech Stack
+
+::: {.tag-list}
+::: {.tag}
+SQL
+:::
+::: {.tag}
+PostgreSQL
+:::
+::: {.tag}
+Python
+:::
+::: {.tag}
+pandas
+:::
+::: {.tag}
+SQLAlchemy
+:::
+::: {.tag}
+Streamlit
+:::
+::: {.tag}
+Plotly
+:::
+::: {.tag}
+Quarto
+:::
+:::
+
+## Analytics Pipeline
+
+```{mermaid}
+flowchart LR
+    A["Synthetic CSV Data"] --> B["PostgreSQL Database"]
+    B --> C["SQL Business Queries"]
+    C --> D["Python Export Pipeline"]
+    D --> E["Streamlit Dashboard"]
+    D --> F["Quarto Portfolio Case Study"]
+```
+
+## What Makes This Portfolio-Ready
+
+::: {.card-grid .three}
+::: {.card}
+### Business Framing
+The project is organized around realistic stakeholder questions: revenue trends, churn risk, category performance, regional performance, discount impact, and customer value.
+:::
+
+::: {.card}
+### Technical Depth
+The SQL analysis demonstrates joins, CTEs, window functions, RFM segmentation, cohort retention, moving averages, rankings, and aggregation logic.
+:::
+
+::: {.card}
+### Executive Presentation
+The dashboard and Quarto website turn raw analysis into a recruiter-friendly case study with KPIs, visuals, recommendations, and resume bullets.
+:::
+:::

@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 import re
 import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import pandas as pd
+from sqlalchemy.engine import Engine
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(PROJECT_ROOT))
@@ -24,37 +26,63 @@ QUERY_PATTERN = re.compile(
 )
 
 
-def parse_business_queries(sql_text: str) -> list[dict[str, str]]:
+@dataclass(frozen=True)
+class BusinessQuery:
+    """Structured representation of one titled SQL business question."""
+
+    number: str
+    title: str
+    question: str
+    sql: str
+
+    @property
+    def output_name(self) -> str:
+        """Return a stable export name that preserves query order."""
+        return f"{self.number}_{self.title}"
+
+
+def parse_business_queries(sql_text: str) -> list[BusinessQuery]:
     """Parse titled SQL queries from sql/04_business_queries.sql."""
-    queries = []
+    queries: list[BusinessQuery] = []
     for match in QUERY_PATTERN.finditer(sql_text):
         queries.append(
-            {
-                "number": match.group("number"),
-                "title": match.group("title").strip(),
-                "question": match.group("question").strip(),
-                "sql": match.group("sql").strip(),
-            }
+            BusinessQuery(
+                number=match.group("number"),
+                title=match.group("title").strip(),
+                question=match.group("question").strip(),
+                sql=match.group("sql").strip(),
+            )
         )
     if not queries:
         raise ValueError("No business queries were parsed. Check sql/04_business_queries.sql formatting.")
     return queries
 
 
-def run_and_export_queries() -> list[Path]:
+def run_and_export_queries(engine: Engine | None = None) -> list[Path]:
     """Run all business queries and export each result to data/processed."""
-    engine = get_engine()
+    engine = engine or get_engine()
     sql_text = (SQL_DIR / "04_business_queries.sql").read_text(encoding="utf-8")
     queries = parse_business_queries(sql_text)
-    exported_paths = []
+    exported_paths: list[Path] = []
+    manifest_rows: list[dict[str, str | int]] = []
 
     with engine.connect() as connection:
         for query in queries:
-            df = pd.read_sql_query(query["sql"], connection)
-            output_name = f"{query['number']}_{query['title']}"
-            path = export_dataframe(df, output_name)
+            df = pd.read_sql_query(query.sql, connection)
+            path = export_dataframe(df, query.output_name)
             exported_paths.append(path)
-            print(f"Exported {query['title']} -> {path.name} ({len(df):,} rows)")
+            manifest_rows.append(
+                {
+                    "query_number": query.number,
+                    "title": query.title,
+                    "business_question": query.question,
+                    "rows_exported": len(df),
+                    "output_file": path.name,
+                }
+            )
+            print(f"Exported {query.title} -> {path.name} ({len(df):,} rows)")
+
+    pd.DataFrame(manifest_rows).to_csv(DATA_PROCESSED_DIR / "query_manifest.csv", index=False)
 
     create_visualizations()
     return exported_paths

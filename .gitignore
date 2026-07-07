@@ -8,6 +8,11 @@ data/processed/*.csv
 data/processed/*.png
 !.gitkeep
 *.log
+.pycache/
+.mplconfig/
+_site/
+website/_site/
+website/*.html
 venv/
 .venv/
 env/

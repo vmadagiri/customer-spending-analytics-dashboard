@@ -1,0 +1,129 @@
+---
+title: "Analysis"
+description: "Dataset, schema, SQL techniques, and analytics workflow."
+---
+
+## Dataset Description
+
+The dataset is generated with Python and Faker to resemble realistic retail behavior. It intentionally includes repeat customers, weighted best-selling products, holiday seasonality, and discount-driven quantity effects.
+
+::: {.card-grid}
+::: {.card}
+`customers`
+: {.metric}
+Demographics, signup date, location, and loyalty tier.
+:::
+
+::: {.card}
+`products`
+: {.metric}
+Category, subcategory, price, and cost.
+:::
+
+::: {.card}
+`stores`
+: {.metric}
+Store metadata and sales region.
+:::
+
+::: {.card}
+`transactions`
+: {.metric}
+Purchase date, quantity, discount, payment method, revenue, and profit.
+:::
+:::
+
+## Database Schema
+
+The PostgreSQL schema uses normalized tables with primary keys, foreign keys, `NOT NULL` constraints, check constraints, and indexes on transaction date plus customer, product, and store IDs.
+
+```{mermaid}
+erDiagram
+    customers ||--o{ transactions : makes
+    products ||--o{ transactions : includes
+    stores ||--o{ transactions : records
+
+    customers {
+        int customer_id PK
+        varchar first_name
+        varchar last_name
+        varchar email
+        varchar gender
+        int age
+        varchar city
+        char state
+        date signup_date
+        varchar loyalty_tier
+    }
+
+    products {
+        int product_id PK
+        varchar product_name
+        varchar category
+        varchar subcategory
+        numeric unit_price
+        numeric cost
+    }
+
+    stores {
+        int store_id PK
+        varchar store_name
+        varchar city
+        char state
+        varchar region
+    }
+
+    transactions {
+        int transaction_id PK
+        int customer_id FK
+        int product_id FK
+        int store_id FK
+        date transaction_date
+        int quantity
+        numeric unit_price
+        numeric discount_percent
+        varchar payment_method
+        numeric revenue
+        numeric profit
+    }
+```
+
+## SQL Analysis
+
+The SQL file answers 26 business questions. The queries are written for PostgreSQL and demonstrate a range of techniques expected in analytics roles.
+
+::: {.card-grid .three}
+::: {.card}
+### Revenue Analytics
+Monthly revenue, profit, average order value, month-over-month growth, running revenue, and 3-month moving averages.
+:::
+
+::: {.card}
+### Customer Analytics
+Repeat customer rate, customer lifetime value, RFM segmentation, churn-risk detection, cohort retention, and declining spend flags.
+:::
+
+::: {.card}
+### Product and Store Analytics
+Category revenue, highest-margin products, product rankings, regional performance, and store rankings within each region.
+:::
+:::
+
+## SQL Techniques Demonstrated
+
+- `INNER JOIN` and `LEFT JOIN`
+- Aggregations with `GROUP BY` and `HAVING`
+- Single and multiple CTEs
+- Window functions: `ROW_NUMBER`, `RANK`, `LAG`, `SUM OVER`, and moving averages
+- `CASE` statements for segmentation and business logic
+- Date functions for monthly, seasonal, weekday/weekend, and cohort analysis
+- Customer segmentation with RFM scoring
+
+## Example Business Questions
+
+1. Which customers generate the highest lifetime revenue?
+2. Which product categories are most profitable?
+3. Which customers are at risk of churn?
+4. Which stores lead revenue within each region?
+5. How do discounts affect order volume, revenue, and profit?
+6. Are revenue trends improving month over month?

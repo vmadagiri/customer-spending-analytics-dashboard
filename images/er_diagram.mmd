@@ -1,0 +1,48 @@
+erDiagram
+    customers ||--o{ transactions : makes
+    products ||--o{ transactions : includes
+    stores ||--o{ transactions : records
+
+    customers {
+        int customer_id PK
+        varchar first_name
+        varchar last_name
+        varchar email
+        varchar gender
+        int age
+        varchar city
+        char state
+        date signup_date
+        varchar loyalty_tier
+    }
+
+    products {
+        int product_id PK
+        varchar product_name
+        varchar category
+        varchar subcategory
+        numeric unit_price
+        numeric cost
+    }
+
+    stores {
+        int store_id PK
+        varchar store_name
+        varchar city
+        char state
+        varchar region
+    }
+
+    transactions {
+        int transaction_id PK
+        int customer_id FK
+        int product_id FK
+        int store_id FK
+        date transaction_date
+        int quantity
+        numeric unit_price
+        numeric discount_percent
+        varchar payment_method
+        numeric revenue
+        numeric profit
+    }

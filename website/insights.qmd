@@ -1,0 +1,57 @@
+---
+title: "Insights"
+description: "Key findings, recommendations, resume bullets, and project positioning."
+---
+
+## Business Insights
+
+::: {.card-grid .three}
+::: {.card}
+### Seasonality Drives Demand
+Holiday-heavy months are intentionally modeled to show higher sales volume, creating a realistic opportunity for inventory and campaign planning.
+:::
+
+::: {.card}
+### Discounts Need Margin Control
+Discount bands can increase quantity sold, but profit impact should be monitored at the category and product level.
+:::
+
+::: {.card}
+### Repeat Customers Matter
+High-frequency customers create a concentrated share of revenue, making retention and loyalty segmentation valuable.
+:::
+:::
+
+## Business Recommendations
+
+::: {.recommendation}
+Prioritize inventory planning for high-revenue categories before holiday demand spikes.
+:::
+
+::: {.recommendation}
+Use RFM segmentation to separate champions, loyal customers, at-risk customers, and new or promising customers.
+:::
+
+::: {.recommendation}
+Launch win-back campaigns for high-value customers with long purchase gaps.
+:::
+
+::: {.recommendation}
+Compare regional category winners to localize merchandising and promotional strategy.
+:::
+
+::: {.recommendation}
+Monitor discount bands by both revenue and profit so promotions increase volume without eroding margin.
+:::
+
+## Resume Bullets
+
+- Analyzed 50,000+ retail transactions by developing 20+ SQL queries using joins, CTEs, window functions, and aggregations to uncover customer behavior, revenue trends, and business insights.
+- Automated a PostgreSQL analytics pipeline with Python, pandas, SQLAlchemy, and Faker to generate synthetic retail data, create normalized tables, load CSV files, and export reusable query results.
+- Built an interactive Streamlit business intelligence dashboard and Quarto portfolio case study with KPI cards, Plotly visualizations, filters, business recommendations, and recruiter-ready documentation.
+
+## About This Project
+
+This project was designed to mirror the type of work expected from a data analyst or data science intern: translating ambiguous business questions into structured data, SQL analysis, reproducible automation, dashboarding, and executive communication.
+
+The case study is intentionally end-to-end. It demonstrates data generation, schema design, SQL analytics, Python automation, dashboard UX, and presentation quality in one cohesive portfolio project.

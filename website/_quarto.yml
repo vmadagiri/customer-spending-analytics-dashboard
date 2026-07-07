@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Customer Spending Analytics"
+  navbar:
+    pinned: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Analysis"
+        href: analysis.qmd
+      - text: "Dashboard"
+        href: dashboard.qmd
+      - text: "Insights"
+        href: insights.qmd
+    right:
+      - text: "GitHub"
+        href: "https://github.com/your-username/customer-spending-analytics-dashboard"
+      - text: "Streamlit"
+        href: "https://your-streamlit-app-url"
+  page-footer:
+    left: "Customer Spending Analytics Dashboard"
+    right: "Built with SQL, PostgreSQL, Python, Streamlit, Plotly, and Quarto"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: right
+    page-layout: full
+    smooth-scroll: true
+    link-external-newwindow: true
+    code-copy: true
+    code-fold: false
+
+execute:
+  freeze: auto

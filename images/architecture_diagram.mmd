@@ -1,0 +1,6 @@
+flowchart LR
+    A["CSV Data<br/>customers, products, stores, transactions"] --> B["PostgreSQL<br/>normalized schema"]
+    B --> C["SQL<br/>business queries, views, segmentation"]
+    C --> D["Python<br/>pandas + SQLAlchemy exports"]
+    D --> E["Streamlit Dashboard<br/>interactive BI experience"]
+    D --> F["Quarto Website<br/>portfolio case study"]

@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+from sqlalchemy.engine import Engine
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(PROJECT_ROOT))
@@ -23,14 +24,14 @@ LOAD_ORDER = [
 ]
 
 
-def load_csvs(engine) -> None:
+def load_csvs(engine: Engine, chunksize: int = 5_000) -> None:
     """Load raw CSV files into PostgreSQL tables."""
     for table_name, filename in LOAD_ORDER:
         path = DATA_RAW_DIR / filename
         if not path.exists():
             raise FileNotFoundError(f"Missing {path}. Run src/generate_data.py first.")
         df = pd.read_csv(path)
-        df.to_sql(table_name, engine, if_exists="append", index=False, method="multi", chunksize=5_000)
+        df.to_sql(table_name, engine, if_exists="append", index=False, method="multi", chunksize=chunksize)
         print(f"Loaded {len(df):,} rows into {table_name}")
 
 

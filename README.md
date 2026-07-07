@@ -1,69 +1,165 @@
 # Customer Spending Analytics Dashboard
 
-A GitHub-ready retail analytics case study that analyzes 50,000+ synthetic transactions to uncover revenue trends, customer behavior, product performance, discount impact, churn risk, and store-level opportunities.
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Analytics-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Quarto](https://img.shields.io/badge/Quarto-Portfolio-39729E?style=for-the-badge&logo=quarto&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-26_queries-0F766E?style=for-the-badge)
+
+A polished retail analytics portfolio project that analyzes 50,000+ transactions to uncover revenue trends, customer behavior, product performance, discount impact, churn risk, and store-level opportunities.
+
+## Project Links
+
+- GitHub repository: `https://github.com/your-username/customer-spending-analytics-dashboard`
+- Quarto portfolio website: `https://your-username.github.io/customer-spending-analytics-dashboard`
+- Streamlit dashboard: `https://your-streamlit-app-url`
+
+## Executive Summary
+
+This project simulates a realistic business analytics workflow for a retail company. It generates synthetic operational data, loads it into a normalized PostgreSQL database, answers stakeholder questions with SQL, exports analysis-ready datasets with Python, and presents insights through both an interactive Streamlit dashboard and a recruiter-friendly Quarto portfolio case study.
 
 ## Business Problem
 
-Retail leaders need a reliable way to understand which customers, products, stores, and seasons drive profitable growth. This project simulates a real analytics workflow: generate operational data, load it into PostgreSQL, answer business questions with SQL, export analysis-ready results, and present the findings in an interactive Streamlit dashboard.
+Retail leaders need to understand which customers, products, stores, seasons, and promotions drive profitable growth. This analysis converts transaction-level data into business recommendations for customer retention, merchandising, regional planning, and discount strategy.
 
-## Tools Used
+## Tech Stack
 
-- PostgreSQL and SQL
-- Python, pandas, SQLAlchemy, Faker
-- Plotly and matplotlib
-- Streamlit
-- Jupyter Notebook
+- SQL and PostgreSQL for schema design, joins, aggregations, CTEs, views, and window functions
+- Python, pandas, SQLAlchemy, and Faker for data generation, loading, automation, and exports
+- Plotly and matplotlib for visualization
+- Streamlit for the interactive business intelligence dashboard
+- Quarto for the polished portfolio case study website
+- Jupyter Notebook for exploratory analysis
 
 ## Dataset Overview
 
 The project generates four normalized CSV files in `data/raw`:
 
-- `customers.csv`: 5,000 customers with demographics, signup dates, and loyalty tiers.
-- `products.csv`: 300 products across Electronics, Clothing, Beauty, Home, Grocery, Sports, and Books.
-- `stores.csv`: 50 stores across Northeast, South, Midwest, and West regions.
-- `transactions.csv`: 50,000+ transactions with repeat purchases, weighted best sellers, discounts, seasonal demand, revenue, and profit.
+| File | Rows | Description |
+| --- | ---: | --- |
+| `customers.csv` | 5,000 | Demographics, location, signup date, and loyalty tier |
+| `products.csv` | 300 | Product catalog with category, subcategory, price, and cost |
+| `stores.csv` | 50 | Store metadata with city, state, and region |
+| `transactions.csv` | 50,000+ | Purchases with quantity, discount, payment method, revenue, and profit |
+
+The synthetic data includes repeat customers, weighted best-selling products, holiday seasonality, and discount-driven quantity effects.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A["CSV Data<br/>customers, products, stores, transactions"] --> B["PostgreSQL<br/>normalized schema"]
+    B --> C["SQL<br/>business queries and views"]
+    C --> D["Python<br/>pandas + SQLAlchemy exports"]
+    D --> E["Streamlit Dashboard<br/>interactive BI"]
+    D --> F["Quarto Website<br/>portfolio case study"]
+```
 
 ## Database Schema
 
-The PostgreSQL schema includes normalized `customers`, `products`, `stores`, and `transactions` tables with primary keys, foreign keys, `NOT NULL` constraints, `CHECK` constraints, and indexes on transaction date plus customer, product, and store IDs.
+```mermaid
+erDiagram
+    customers ||--o{ transactions : makes
+    products ||--o{ transactions : includes
+    stores ||--o{ transactions : records
 
-## SQL Techniques Demonstrated
+    customers {
+        int customer_id PK
+        varchar first_name
+        varchar last_name
+        varchar email
+        varchar gender
+        int age
+        varchar city
+        char state
+        date signup_date
+        varchar loyalty_tier
+    }
 
-The SQL analysis includes 26 business queries using:
+    products {
+        int product_id PK
+        varchar product_name
+        varchar category
+        varchar subcategory
+        numeric unit_price
+        numeric cost
+    }
 
-- `INNER JOIN` and `LEFT JOIN`
-- `GROUP BY`, `HAVING`, and aggregations
-- Single and multiple CTEs
-- Window functions including `ROW_NUMBER`, `RANK`, `LAG`, and `SUM OVER`
-- 3-month moving averages
-- `CASE` statements
-- Date functions and cohort logic
-- Customer segmentation through RFM analysis
+    stores {
+        int store_id PK
+        varchar store_name
+        varchar city
+        char state
+        varchar region
+    }
 
-## Dashboard Features
+    transactions {
+        int transaction_id PK
+        int customer_id FK
+        int product_id FK
+        int store_id FK
+        date transaction_date
+        int quantity
+        numeric unit_price
+        numeric discount_percent
+        varchar payment_method
+        numeric revenue
+        numeric profit
+    }
+```
 
-The Streamlit dashboard includes:
+## SQL Analysis
 
-- Executive KPIs: total revenue, total profit, transactions, and average order value
-- Revenue trends: monthly revenue and month-over-month growth
-- Customer analytics: top customers, RFM segments, and churn-risk customers
-- Product analytics: top products, category revenue, and category margin
-- Store analytics: regional revenue and store rankings
-- Filters for date range, region, product category, and loyalty tier
-- Business recommendations generated from the filtered view
+The project includes 26 business queries in `sql/04_business_queries.sql`, covering:
 
-## Key Insights to Look For
+- Executive KPI summary
+- Monthly revenue and profit trends
+- Month-over-month growth
+- Top customers and customer lifetime value
+- Repeat customer rate
+- RFM customer segmentation
+- Churn-risk customers
+- Cohort retention
+- Product, category, margin, and discount analysis
+- Weekday/weekend and seasonal trends
+- Regional and store performance rankings
+- 3-month moving averages and cumulative revenue
 
-- Holiday periods should show stronger transaction volume and revenue.
-- Discount bands can increase units sold while compressing profit margin.
-- A small group of repeat customers should contribute a meaningful share of revenue.
-- Product category performance varies by region, which supports localized merchandising.
-- Churn-risk customers can be prioritized by high historical value and long purchase gaps.
+Techniques demonstrated include `INNER JOIN`, `LEFT JOIN`, `GROUP BY`, `HAVING`, CTEs, multiple CTEs, `ROW_NUMBER`, `RANK`, `LAG`, `SUM OVER`, moving averages, `CASE` statements, date functions, and customer segmentation.
+
+## Streamlit Dashboard
+
+The dashboard in `dashboard/app.py` includes:
+
+- Executive KPI cards for revenue, profit, transactions, and average order value
+- Date range, region, product category, and loyalty tier filters
+- Monthly revenue and month-over-month growth charts
+- Top customers, RFM segments, and churn-risk customers
+- Top products, category revenue, and category margin
+- Regional revenue and store rankings
+- Business recommendations based on the selected data
+
+Run it with:
+
+```bash
+streamlit run dashboard/app.py
+```
+
+## Quarto Portfolio Website
+
+The repo also includes a Quarto website in `website/` that presents this project as a professional case study. It includes the business problem, dataset description, database schema, SQL analysis, dashboard overview, insights, recommendations, resume bullets, and screenshot gallery.
+
+Render it with:
+
+```bash
+cd website
+quarto preview
+```
 
 ## How to Run Locally
 
 ```bash
-cd "/Users/vaishnavimadagiri/Documents/New project/customer-spending-analytics-dashboard"
+cd "customer-spending-analytics-dashboard"
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -75,14 +171,10 @@ Create a PostgreSQL database:
 createdb customer_spending
 ```
 
-If your PostgreSQL credentials are not `postgres/postgres`, create a `.env` file:
+If your PostgreSQL credentials are not `postgres/postgres`, copy `.env.example` to `.env` and edit the values:
 
 ```bash
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=customer_spending
-DB_USER=postgres
-DB_PASSWORD=postgres
+cp .env.example .env
 ```
 
 Generate data, load PostgreSQL, export query results, and run the dashboard:
@@ -107,7 +199,6 @@ streamlit run dashboard/app.py
 customer-spending-analytics-dashboard/
 ├── README.md
 ├── requirements.txt
-├── .gitignore
 ├── config.py
 ├── data/
 │   ├── raw/
@@ -125,32 +216,47 @@ customer-spending-analytics-dashboard/
 │   └── utils.py
 ├── dashboard/
 │   └── app.py
+├── website/
+│   ├── _quarto.yml
+│   ├── index.qmd
+│   ├── analysis.qmd
+│   ├── dashboard.qmd
+│   └── insights.qmd
 ├── notebooks/
 │   └── customer_spending_analysis.ipynb
 ├── images/
 └── dashboard_screenshots/
 ```
 
-## Screenshots
+## Screenshots To Add
 
-Add screenshots after running Streamlit:
+Save Streamlit screenshots in `dashboard_screenshots/` using these filenames:
 
-- Executive Summary with filters visible
-- Revenue Trends section
-- Customer Analytics section with RFM chart
-- Product Analytics section
-- Store Analytics and Business Recommendations
+- `executive_summary.png`
+- `revenue_trends.png`
+- `customer_analytics.png`
+- `product_store_analytics.png`
+
+These screenshots are referenced by the Quarto website.
+
+## Key Insights
+
+- Holiday-heavy periods create visible revenue and transaction lift.
+- Discounting can increase units sold, but margin impact should be monitored by category and product.
+- Repeat customers and high-RFM segments are important retention targets.
+- Product category performance varies across regions, supporting localized merchandising.
+- High-value customers with long purchase gaps should be prioritized for win-back campaigns.
 
 ## Resume Bullets
 
 - Analyzed 50,000+ retail transactions by developing 20+ SQL queries using joins, CTEs, window functions, and aggregations to uncover customer behavior, revenue trends, and business insights.
 - Automated a PostgreSQL analytics pipeline with Python, pandas, SQLAlchemy, and Faker to generate synthetic retail data, create normalized tables, load CSV files, and export reusable query results.
-- Built an interactive Streamlit business intelligence dashboard with Plotly visualizations, KPI cards, and filters for date range, region, product category, and loyalty tier.
+- Built an interactive Streamlit business intelligence dashboard and Quarto portfolio case study with KPI cards, Plotly visualizations, filters, business recommendations, and recruiter-ready documentation.
 
 ## Future Improvements
 
+- Add Docker Compose for one-command PostgreSQL setup.
 - Add dbt models and tests for production-style analytics engineering.
 - Schedule refreshes with Airflow or GitHub Actions.
-- Add customer propensity modeling for churn and next-best-offer recommendations.
-- Deploy the dashboard to Streamlit Community Cloud.
-- Add Docker Compose for one-command PostgreSQL setup.
+- Add churn prediction or customer propensity modeling.
+- Deploy the dashboard to Streamlit Community Cloud and the Quarto site to GitHub Pages.

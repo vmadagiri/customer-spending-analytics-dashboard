@@ -1,0 +1,195 @@
+/* Portfolio-grade styling for the Quarto case study. */
+
+:root {
+  --ink: #172033;
+  --muted: #5f6b7a;
+  --panel: #ffffff;
+  --line: #d9e2ec;
+  --blue: #1f5eff;
+  --teal: #0f766e;
+  --gold: #b7791f;
+  --bg: #f6f8fb;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(31, 94, 255, 0.08), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 52%, #ffffff 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(23, 32, 51, 0.08);
+  box-shadow: 0 8px 28px rgba(23, 32, 51, 0.06);
+}
+
+.navbar-title {
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+h1, h2, h3 {
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.hero {
+  padding: 5rem 0 3rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.42rem 0.72rem;
+  border-radius: 999px;
+  color: #0f3f92;
+  background: #eaf1ff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin-top: 1.1rem;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 1;
+  font-weight: 850;
+}
+
+.hero p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.18rem;
+  line-height: 1.7;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.82rem 1rem;
+  border-radius: 0.55rem;
+  font-weight: 750;
+  text-decoration: none;
+  border: 1px solid var(--line);
+}
+
+.button.primary {
+  color: #ffffff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.button.secondary {
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 18px 45px rgba(23, 32, 51, 0.07);
+}
+
+.card .metric {
+  display: block;
+  color: var(--blue);
+  font-size: 2rem;
+  font-weight: 850;
+  line-height: 1.1;
+}
+
+.card .label {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.callout-note {
+  border-left-color: var(--blue);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0;
+}
+
+.tag {
+  padding: 0.42rem 0.65rem;
+  border-radius: 0.5rem;
+  background: #edf7f5;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.screenshot-card {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.screenshot-card p {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.recommendation {
+  border-left: 4px solid var(--teal);
+  padding: 1rem 1.1rem;
+  background: #f1fbf9;
+  border-radius: 0.4rem;
+  margin: 0.8rem 0;
+}
+
+@media (max-width: 900px) {
+  .card-grid,
+  .card-grid.three,
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+}
